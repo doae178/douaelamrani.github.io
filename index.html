@@ -14,139 +14,190 @@
   <!-- Custom Styles-->
   <style>
     :root {
-      --primary-color: #00796B;
-      --secondary-color: #004D40;
-      --accent-color: #FF5722;
-    }
-    
-    body {
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
-      font-family: 'Roboto', sans-serif;
-    }
-    
-    main {
-      flex: 1 0 auto;
-    }
-    
-    .teal {
-      color: var(--primary-color) !important;
-    }
-    
-    .teal-text {
-      color: var(--primary-color) !important;
-    }
-    
-    .section {
-      padding: 50px 0;
-    }
-    
-    .full-height {
-      min-height: 100vh;
-    }
-    
-    .profile-pic {
-      width: 120px;
-      height: 120px;
-      border: 4px solid white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    
-    .side-nav li {
-      padding: 5px 0;
-    }
-    
-    .social a {
-      margin: 0 10px;
-    }
-    
-    .icon-btn {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: none;
-      color: white;
-      font-size: 20px;
-      margin: 5px;
-      transition: all 0.3s;
-    }
-    
-    .icon-btn.linkedin {
-      background-color: #0077B5;
-    }
-    
-    .icon-btn.github {
-      background-color: #333;
-    }
-    
-    .icon-btn:hover {
-      transform: scale(1.1);
-    }
-    
-    .readme, .contactme {
-      padding: 10px 20px;
-      margin: 10px;
-      border-radius: 4px;
-      text-transform: uppercase;
-      font-weight: bold;
-    }
-    
-    .readme {
-      background-color: var(--primary-color);
-      color: white;
-    }
-    
-    .contactme {
-      background-color: transparent;
-      border: 2px solid var(--primary-color);
-      color: var(--primary-color);
-    }
-    
-    .hoverline:hover {
-      text-decoration: underline;
-      color: var(--secondary-color);
-    }
-    
-    .card .card-action {
-      border-top: 1px solid rgba(0,0,0,0.1);
-    }
-    
-    #intro {
-      background: linear-gradient(rgba(0, 77, 64, 0.8), rgba(0, 77, 64, 0.8)), url('https://source.unsplash.com/random/1600x900/?technology') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-      display: flex;
-      align-items: center;
-    }
-    
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.4);
-    }
-    
-    .caption h2, .caption h5 {
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    }
-    
-    .progress {
-      background-color: #ddd;
-    }
-    
-    .progress .determinate {
-      background-color: var(--primary-color);
-    }
-    
-    @media only screen and (max-width: 992px) {
-      .profile-pic {
-        width: 80px;
-        height: 80px;
-      }
-    }
+  --primary-color: #00897B; /* Teal modern */
+  --secondary-color: #004D40;
+  --accent-color: #FF7043;
+  --text-color: #333;
+  --bg-light: #f9f9f9;
+  --card-bg: #fff;
+}
+
+/* Reset & Base */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+h2, h3, h4, h5 {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+.section {
+  padding: 60px 0;
+}
+
+/* Profile */
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Navigation */
+.side-nav {
+  background: var(--card-bg);
+}
+
+.side-nav li a {
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.side-nav li a:hover {
+  background: rgba(0, 137, 123, 0.1);
+  color: var(--accent-color) !important;
+}
+
+nav.hide-on-large {
+  background: var(--card-bg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 10px;
+}
+
+/* Hero Section */
+#intro {
+  background: linear-gradient(rgba(0, 77, 64, 0.7), rgba(0, 77, 64, 0.7)), 
+              url('https://source.unsplash.com/random/1600x900/?technology') no-repeat center/cover;
+  color: white;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.caption h2 {
+  font-size: 2.5rem;
+}
+
+.caption h5 {
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+/* Buttons */
+.readme, .contactme {
+  padding: 12px 24px;
+  margin: 10px 10px 0 0;
+  border-radius: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.readme {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.readme:hover {
+  background-color: var(--accent-color);
+}
+
+.contactme {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background: transparent;
+}
+
+.contactme:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Social Buttons */
+.icon-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  font-size: 18px;
+  margin: 5px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: all 0.3s;
+}
+
+.icon-btn.linkedin { background-color: #0077B5; }
+.icon-btn.github { background-color: #333; }
+
+.icon-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* Cards */
+.card {
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+  background: var(--card-bg);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card .card-title {
+  font-weight: 600;
+}
+
+/* Progress bars */
+.progress {
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  height: 8px;
+}
+
+.progress .determinate {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+}
+
+/* Responsive */
+@media only screen and (max-width: 992px) {
+  .profile-pic {
+    width: 90px;
+    height: 90px;
+  }
+
+  .caption h2 {
+    font-size: 2rem;
+  }
+}
+
   </style>
 </head>
 
