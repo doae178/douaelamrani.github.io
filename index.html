@@ -1,287 +1,92 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lamrani Douae - Développeuse Web | Mobile</title>
-
-  <!-- Materialize CSS -->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: #ecf0f1;
-      color: #2c3e50;
-      line-height: 1.6;
-    }
-
-    /* Navigation Sidebar */
-    nav ul.side-nav {
-      background: rgba(44, 62, 80, 0.95);
-      backdrop-filter: blur(10px);
-      border-right: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    nav ul.side-nav li a {
-      color: #ecf0f1 !important;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    nav ul.side-nav li a:hover {
-      color: #1abc9c !important;
-      transform: translateX(6px);
-    }
-
-    nav .brand-logo img {
-      border: 3px solid #1abc9c;
-      transition: 0.3s;
-    }
-
-    nav .brand-logo img:hover {
-      transform: scale(1.05);
-    }
-
-    /* Hero Section */
-    #intro {
-      background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)),
-        url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?fit=crop&w=1400&q=80') center/cover;
-      color: white;
-      text-align: center;
-      padding: 120px 20px;
-    }
-
-    #intro h2 span.teal {
-      color: #1abc9c;
-      font-weight: 600;
-    }
-
-    .buttons a {
-      margin: 10px;
-      padding: 12px 28px;
-      border-radius: 50px;
-      background: linear-gradient(135deg, #1abc9c, #16a085);
-      color: white;
-      transition: 0.4s;
-      display: inline-block;
-    }
-
-    .buttons a:hover {
-      background: linear-gradient(135deg, #f39c12, #e67e22);
-      transform: scale(1.05);
-    }
-
-    /* Section Titles */
-    h3.page-title {
-      padding: 10px 20px;
-      border-radius: 12px;
-      display: inline-block;
-      font-weight: 600;
-    }
-
-    /* Cards */
-    .card {
-      border-radius: 16px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-    }
-
-    .card-image img {
-      border-top-left-radius: 16px;
-      border-top-right-radius: 16px;
-      transition: 0.3s;
-    }
-
-    .card-image img:hover {
-      transform: scale(1.05);
-    }
-
-    /* Progress Bars */
-    .progress {
-      height: 10px;
-      border-radius: 20px;
-      background-color: #dfe6e9;
-    }
-
-    .progress .determinate {
-      border-radius: 20px;
-      background: linear-gradient(135deg, #1abc9c, #16a085);
-    }
-
-    /* Contact Buttons */
-    #contact a.btn-floating {
-      transition: 0.3s;
-    }
-
-    #contact a.btn-floating:hover {
-      box-shadow: 0 0 15px #1abc9c;
-      transform: scale(1.1);
-    }
-
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      #intro {
-        padding: 80px 20px;
-      }
-
-      .buttons a {
-        width: 100%;
-      }
-    }
-  </style>
 </head>
-
 <body>
-  <!-- Navigation Menu -->
-  <nav class="hide-on-small-only">
-    <ul class="side-nav fixed section table-of-contents">
-      <li class="logo">
-        <a id="logo-container" href="#intro" class="brand-logo">
-          <img src="https://via.placeholder.com/150" class="circle img-responsive profile-pic" alt="Lamrani Douae">
-        </a>
-      </li>
-      <li class="bold"><a href="#about"><i class="fa fa-user small"></i> À propos</a></li>
-      <li class="bold"><a href="#experience"><i class="fa fa-briefcase small"></i> Expérience</a></li>
-      <li class="bold"><a href="#projects"><i class="fa fa-code small"></i> Projets</a></li>
-      <li class="bold"><a href="#skills"><i class="fa fa-cogs small"></i> Compétences</a></li>
-      <li class="bold"><a href="#education"><i class="fa fa-graduation-cap small"></i> Formation</a></li>
-      <li class="bold"><a href="#contact"><i class="fa fa-envelope small"></i> Contact</a></li>
+
+  <!-- Header -->
+  <header>
+    <h1>Lamrani Douae</h1>
+    <p>Développeuse Web | Mobile</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#experience">Expérience</a></li>
+      <li><a href="#education">Éducation</a></li>
+      <li><a href="#skills">Compétences</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Mobile Navigation -->
-  <nav class="hide-on-large only trigger z-depth-1">
-    <a href="#" data-activates="slide-out" class="button-collapse">
-      <i class="fa fa-bars"></i>
-    </a>
-    <div class="name-title">
-      <a id="name" href="#" class="teal-text">Lamrani Douae</a>
-      <span class="black-text">Développeuse Web | Mobile</span>
+  <!-- Section À propos -->
+  <section id="about">
+    <h2>À propos</h2>
+    <p>Je suis une développeuse passionnée par le web et le mobile. Mon objectif est de créer des applications utiles et performantes en utilisant les technologies modernes.</p>
+  </section>
+
+  <!-- Section Expérience -->
+  <section id="experience">
+    <h2>Expérience</h2>
+    <div>
+      <h3>Stage - Ministère de l’Économie et des Finances</h3>
+      <p>Juin 2024 - Août 2024</p>
+      <p>Développement d’un site web événementiel pour les Assemblées Annuelles du FMI et de la Banque Mondiale.</p>
     </div>
-  </nav>
+    <div>
+      <h3>Projet Universitaire - Bankati</h3>
+      <p>2024</p>
+      <p>Application web de gestion bancaire utilisant Spring Boot, Spring MVC et Spring Data JPA.</p>
+    </div>
+  </section>
 
-  <nav class="hide-on-large only">
-    <ul id="slide-out" class="side-nav">
-      <li><a href="#about"><i class="fa fa-user small"></i> À propos</a></li>
-      <li><a href="#experience"><i class="fa fa-briefcase small"></i> Expérience</a></li>
-      <li><a href="#projects"><i class="fa fa-code small"></i> Projets</a></li>
-      <li><a href="#skills"><i class="fa fa-cogs small"></i> Compétences</a></li>
-      <li><a href="#education"><i class="fa fa-graduation-cap small"></i> Formation</a></li>
-      <li><a href="#contact"><i class="fa fa-envelope small"></i> Contact</a></li>
+  <!-- Section Éducation -->
+  <section id="education">
+    <h2>Éducation</h2>
+    <p>EMSI - Cycle Ingénieur en Informatique (2021 - 2026)</p>
+  </section>
+
+  <!-- Section Compétences -->
+  <section id="skills">
+    <h2>Compétences</h2>
+    <ul>
+      <li>HTML, CSS, JavaScript</li>
+      <li>React, Bootstrap</li>
+      <li>Java, Spring Boot, JEE</li>
+      <li>PHP, MySQL</li>
+      <li>Android (Java)</li>
     </ul>
-  </nav>
+  </section>
 
-  <!-- Main Content -->
-  <main>
-    <!-- Hero -->
-    <section id="intro" class="section scrollspy full-height">
-      <div class="container">
-        <h2>Bonjour, je suis <span class="teal">Lamrani Douae.</span></h2>
-        <h5>Une <span class="teal">Développeuse Web et Mobile</span> passionnée</h5>
-        <p>Développeuse Junior motivée et attentive aux détails, avec une expérience pratique acquise lors de ma formation à l'EMSI.</p>
-        <div class="buttons">
-          <a href="#about">En savoir plus</a>
-          <a href="#contact">Me contacter</a>
-        </div>
-      </div>
-    </section>
+  <!-- Section Projets -->
+  <section id="projects">
+    <h2>Projets</h2>
+    <ul>
+      <li>Application web de gestion des offres d'emploi (Java EE + MySQL)</li>
+      <li>Application mobile Android de gestion d'hôtel</li>
+      <li>Portfolio personnel interactif</li>
+    </ul>
+  </section>
 
-    <!-- About -->
-    <section id="about" class="section scrollspy">
-      <h3 class="page-title white-text teal">À propos</h3>
-      <div class="container flow-text">
-        <p>Développeuse motivée avec maîtrise de Java EE, PHP/MySQL et Django. Passionnée par la création d’applications web réactives et modernes.</p>
-      </div>
-    </section>
+  <!-- Section Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email : lamrani.douae@example.com</p>
+    <p>Téléphone : +212 6 12 34 56 78</p>
+    <p>LinkedIn : <a href="#">linkedin.com/in/douae-lamrani</a></p>
+    <p>GitHub : <a href="#">github.com/douae-lamrani</a></p>
+  </section>
 
-    <!-- Experience -->
-    <section id="experience" class="section scrollspy">
-      <h3 class="page-title white-text teal">Expérience</h3>
-      <div class="container">
-        <div class="card">
-          <div class="card-content">
-            <span class="card-title teal-text">Ministère de l'Économie et des Finances</span>
-            <p class="brown-text">Stage - Développement d’un site web événementiel</p>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Lamrani Douae. Tous droits réservés.</p>
+  </footer>
 
-    <!-- Projects -->
-    <section id="projects" class="section scrollspy">
-      <h3 class="page-title white-text teal">Projets</h3>
-      <div class="container">
-        <div class="card">
-          <div class="card-content">
-            <span class="card-title teal-text">Application Gestion Cabinet Médical</span>
-            <p>Application web complète avec Django + PostgreSQL.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="section scrollspy">
-      <h3 class="page-title white-text teal">Compétences</h3>
-      <div class="container">
-        <p>Java, PHP, Python, JavaScript, HTML/CSS</p>
-        <div class="progress"><div class="determinate" style="width:85%"></div></div>
-      </div>
-    </section>
-
-    <!-- Education -->
-    <section id="education" class="section scrollspy">
-      <h3 class="page-title white-text teal">Formation</h3>
-      <div class="container">
-        <div class="card">
-          <div class="card-content">
-            <span class="card-title teal-text">EMSI - Rabat</span>
-            <p>Ingénierie Informatique (2021 - 2026)</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section scrollspy full-height">
-      <h3 class="page-title white-text teal">Contact</h3>
-      <div class="container">
-        <p>
-          <a href="mailto:douselamrani3@gmail.com" target="_blank"
-            class="btn-floating btn-large waves-effect waves-light blue-grey">
-            <i class="fa fa-envelope"></i>
-          </a>
-          douselamrani3@gmail.com
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <!-- Materialize JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $(".scrollspy").scrollSpy();
-      $(".button-collapse").sideNav({
-        menuWidth: 200,
-        edge: "left",
-        closeOnClick: true
-      });
-    });
-  </script>
 </body>
-
 </html>
