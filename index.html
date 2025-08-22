@@ -7,671 +7,278 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lamrani Douae - Développeuse Web | Mobile</title>
 
-  <!-- Materialize - Compiled and minified CSS-->
+  <!-- Materialize CSS -->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
-  <!-- Font Awesome Icon - CSS-->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-  <!-- Custom Styles-->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+
   <style>
-    :root {
-  --primary-color: #00897B; /* Teal modern */
-  --secondary-color: #004D40;
-  --accent-color: #FF7043;
-  --text-color: #333;
-  --bg-light: #f9f9f9;
-  --card-bg: #fff;
-}
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #ecf0f1;
+      color: #2c3e50;
+      line-height: 1.6;
+    }
 
-/* Reset & Base */
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  font-family: 'Roboto', sans-serif;
-  color: var(--text-color);
-  background-color: var(--bg-light);
-  line-height: 1.6;
-}
+    /* Navigation Sidebar */
+    nav ul.side-nav {
+      background: rgba(44, 62, 80, 0.95);
+      backdrop-filter: blur(10px);
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-main {
-  flex: 1 0 auto;
-}
+    nav ul.side-nav li a {
+      color: #ecf0f1 !important;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
 
-h2, h3, h4, h5 {
-  font-weight: 600;
-  color: var(--primary-color);
-}
+    nav ul.side-nav li a:hover {
+      color: #1abc9c !important;
+      transform: translateX(6px);
+    }
 
-a {
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
+    nav .brand-logo img {
+      border: 3px solid #1abc9c;
+      transition: 0.3s;
+    }
 
-a:hover {
-  color: var(--accent-color);
-}
+    nav .brand-logo img:hover {
+      transform: scale(1.05);
+    }
 
-.section {
-  padding: 60px 0;
-}
+    /* Hero Section */
+    #intro {
+      background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)),
+        url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?fit=crop&w=1400&q=80') center/cover;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+    }
 
-/* Profile */
-.profile-pic {
-  width: 120px;
-  height: 120px;
-  border: 4px solid #fff;
-  border-radius: 50%;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
+    #intro h2 span.teal {
+      color: #1abc9c;
+      font-weight: 600;
+    }
 
-/* Navigation */
-.side-nav {
-  background: var(--card-bg);
-}
+    .buttons a {
+      margin: 10px;
+      padding: 12px 28px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #1abc9c, #16a085);
+      color: white;
+      transition: 0.4s;
+      display: inline-block;
+    }
 
-.side-nav li a {
-  font-weight: 500;
-  transition: all 0.3s;
-}
+    .buttons a:hover {
+      background: linear-gradient(135deg, #f39c12, #e67e22);
+      transform: scale(1.05);
+    }
 
-.side-nav li a:hover {
-  background: rgba(0, 137, 123, 0.1);
-  color: var(--accent-color) !important;
-}
+    /* Section Titles */
+    h3.page-title {
+      padding: 10px 20px;
+      border-radius: 12px;
+      display: inline-block;
+      font-weight: 600;
+    }
 
-nav.hide-on-large {
-  background: var(--card-bg);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 10px;
-}
+    /* Cards */
+    .card {
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
 
-/* Hero Section */
-#intro {
-  background: linear-gradient(rgba(0, 77, 64, 0.7), rgba(0, 77, 64, 0.7)), 
-              url('https://source.unsplash.com/random/1600x900/?technology') no-repeat center/cover;
-  color: white;
-  display: flex;
-  align-items: center;
-  text-align: left;
-}
+    .card:hover {
+      transform: translateY(-8px);
+    }
 
-.caption h2 {
-  font-size: 2.5rem;
-}
+    .card-image img {
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      transition: 0.3s;
+    }
 
-.caption h5 {
-  font-weight: 400;
-  margin-top: 10px;
-}
+    .card-image img:hover {
+      transform: scale(1.05);
+    }
 
-/* Buttons */
-.readme, .contactme {
-  padding: 12px 24px;
-  margin: 10px 10px 0 0;
-  border-radius: 30px;
-  font-weight: 600;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-}
+    /* Progress Bars */
+    .progress {
+      height: 10px;
+      border-radius: 20px;
+      background-color: #dfe6e9;
+    }
 
-.readme {
-  background-color: var(--primary-color);
-  color: white;
-}
+    .progress .determinate {
+      border-radius: 20px;
+      background: linear-gradient(135deg, #1abc9c, #16a085);
+    }
 
-.readme:hover {
-  background-color: var(--accent-color);
-}
+    /* Contact Buttons */
+    #contact a.btn-floating {
+      transition: 0.3s;
+    }
 
-.contactme {
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
-  background: transparent;
-}
+    #contact a.btn-floating:hover {
+      box-shadow: 0 0 15px #1abc9c;
+      transform: scale(1.1);
+    }
 
-.contactme:hover {
-  background-color: var(--primary-color);
-  color: white;
-}
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      #intro {
+        padding: 80px 20px;
+      }
 
-/* Social Buttons */
-.icon-btn {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: none;
-  color: white;
-  font-size: 18px;
-  margin: 5px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  transition: all 0.3s;
-}
-
-.icon-btn.linkedin { background-color: #0077B5; }
-.icon-btn.github { background-color: #333; }
-
-.icon-btn:hover {
-  transform: translateY(-3px);
-}
-
-/* Cards */
-.card {
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s;
-  background: var(--card-bg);
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card .card-title {
-  font-weight: 600;
-}
-
-/* Progress bars */
-.progress {
-  background-color: #e0e0e0;
-  border-radius: 10px;
-  height: 8px;
-}
-
-.progress .determinate {
-  background-color: var(--primary-color);
-  border-radius: 10px;
-}
-
-/* Responsive */
-@media only screen and (max-width: 992px) {
-  .profile-pic {
-    width: 90px;
-    height: 90px;
-  }
-
-  .caption h2 {
-    font-size: 2rem;
-  }
-}
-
+      .buttons a {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <!-- Navigation Menu-->
+  <!-- Navigation Menu -->
   <nav class="hide-on-small-only">
     <ul class="side-nav fixed section table-of-contents">
       <li class="logo">
-        <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
-          class="brand-logo grey-blue-text">
+        <a id="logo-container" href="#intro" class="brand-logo">
           <img src="https://via.placeholder.com/150" class="circle img-responsive profile-pic" alt="Lamrani Douae">
         </a>
       </li>
-      <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text">
-          <i class="fa fa-user small"></i><span>À propos</span>
-        </a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Experience section" href="#experience" class="waves-effect waves-dark teal-text">
-          <i class="fa fa-briefcase small"></i><span>Expérience</span>
-        </a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text">
-          <i class="fa fa-code small"></i><span>Projets</span>
-        </a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text">
-          <i class="fa fa-cogs small"></i><span>Compétences</span>
-        </a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text">
-          <i class="fa fa-graduation-cap small"></i><span>Formation</span>
-        </a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text">
-          <i class="fa fa-envelope small"></i><span>Contact</span>
-        </a>
-      </li>
+      <li class="bold"><a href="#about"><i class="fa fa-user small"></i> À propos</a></li>
+      <li class="bold"><a href="#experience"><i class="fa fa-briefcase small"></i> Expérience</a></li>
+      <li class="bold"><a href="#projects"><i class="fa fa-code small"></i> Projets</a></li>
+      <li class="bold"><a href="#skills"><i class="fa fa-cogs small"></i> Compétences</a></li>
+      <li class="bold"><a href="#education"><i class="fa fa-graduation-cap small"></i> Formation</a></li>
+      <li class="bold"><a href="#contact"><i class="fa fa-envelope small"></i> Contact</a></li>
     </ul>
   </nav>
 
   <!-- Mobile Navigation -->
   <nav class="hide-on-large only trigger z-depth-1">
-    <a aria-label="Toggle visibility of the mobile navbar" href="#" data-activates="slide-out" class="button-collapse">
+    <a href="#" data-activates="slide-out" class="button-collapse">
       <i class="fa fa-bars"></i>
     </a>
     <div class="name-title">
-      <a id="name" aria-label="Navigate to the beginning of the page" href="#" class="teal-text">Lamrani Douae</a>
+      <a id="name" href="#" class="teal-text">Lamrani Douae</a>
       <span class="black-text">Développeuse Web | Mobile</span>
     </div>
   </nav>
 
   <nav class="hide-on-large only">
     <ul id="slide-out" class="side-nav">
-      <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text">
-          <i class="fa fa-user small"></i><span>À propos</span>
-        </a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Experience section" href="#experience" class="waves-effect waves-dark teal-text">
-          <i class="fa fa-briefcase small"></i><span>Expérience</span>
-        </a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text">
-          <i class="fa fa-code small"></i><span>Projets</span>
-        </a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text">
-          <i class="fa fa-cogs small"></i><span>Compétences</span>
-        </a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text">
-          <i class="fa fa-graduation-cap small"></i><span>Formation</span>
-        </a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text">
-          <i class="fa fa-envelope small"></i><span>Contact</span>
-        </a>
-      </li>
+      <li><a href="#about"><i class="fa fa-user small"></i> À propos</a></li>
+      <li><a href="#experience"><i class="fa fa-briefcase small"></i> Expérience</a></li>
+      <li><a href="#projects"><i class="fa fa-code small"></i> Projets</a></li>
+      <li><a href="#skills"><i class="fa fa-cogs small"></i> Compétences</a></li>
+      <li><a href="#education"><i class="fa fa-graduation-cap small"></i> Formation</a></li>
+      <li><a href="#contact"><i class="fa fa-envelope small"></i> Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Main Content-->
+  <!-- Main Content -->
   <main>
-    <!-- First Section: Heading lines and image -->
+    <!-- Hero -->
     <section id="intro" class="section scrollspy full-height">
-      <div class="overlay"></div>
       <div class="container">
-        <div class="col-md-9">
-          <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
-            <div class="caption">
-              <h2>Bonjour, je suis <span class="teal">Lamrani Douae.</span></h2>
-              <h5 style="color:#fff">Une <span class="teal">Développeuse Web et Mobile</span> passionnée</h5>
-              <h5>Développeuse Junior motivée et attentive aux détails, avec une expérience pratique acquise lors de ma formation à l'École Marocaine des Sciences de l'ingénieur (EMSI).</h5>
-            </div>
-            <div class="social">
-              <a href="https://linkedin.com/in/" target="_blank">
-                <button class="icon-btn linkedin">
-                  <i class="fa fa-linkedin"></i>
-                </button>
-              </a>
-              <a href="https://github.com/" target="_blank">
-                <button class="icon-btn github">
-                  <i class="fa fa-github"></i>
-                </button>
-              </a>
-            </div>
-            <div class='buttons'>
-              <a href="#about" class="readme">En savoir plus</a>
-              <a href="#contact" class="contactme">Me contacter</a>
-            </div>
-          </div>
+        <h2>Bonjour, je suis <span class="teal">Lamrani Douae.</span></h2>
+        <h5>Une <span class="teal">Développeuse Web et Mobile</span> passionnée</h5>
+        <p>Développeuse Junior motivée et attentive aux détails, avec une expérience pratique acquise lors de ma formation à l'EMSI.</p>
+        <div class="buttons">
+          <a href="#about">En savoir plus</a>
+          <a href="#contact">Me contacter</a>
         </div>
       </div>
     </section>
 
-    <!-- Second Section: About -->
+    <!-- About -->
     <section id="about" class="section scrollspy">
       <h3 class="page-title white-text teal">À propos</h3>
       <div class="container flow-text">
-        <p>
-          Développeur Junior motivé et attentif aux détails, avec une expérience pratique acquise lors de ma formation à l'École Marocaine des Sciences de l'ingénieur (EMSI). Maîtrise de Java EE et PHP/MySQL, avec de solides bases dans la création d'applications web réactives et fonctionnelles.
-        </p>
-        <p>
-          Reconnu pour mes compétences en résolution de problèmes, ma soif d'apprendre et mon engagement à fournir des résultats de haute qualité dans des environnements collaboratifs.
-        </p>
-        <p>
-          <ul>
-            <li><b>Langages:</b> Java, PHP, JavaScript, Python, C++, HTML/CSS</li>
-            <li><b>Bases de données:</b> MySQL, PostgreSQL</li>
-            <li><b>Frameworks:</b> Django, Bootstrap</li>
-            <li><b>Outils:</b> Git, PL/SQL</li>
-          </ul>
-        </p>
-        <p>
-          Je recherche un stage en développement web ou mobile pour mettre en pratique mes compétences et continuer à apprendre dans un environnement professionnel.
-        </p>
+        <p>Développeuse motivée avec maîtrise de Java EE, PHP/MySQL et Django. Passionnée par la création d’applications web réactives et modernes.</p>
       </div>
     </section>
 
-    <!-- Third Section: Experience -->
+    <!-- Experience -->
     <section id="experience" class="section scrollspy">
-      <h3 class="page-title white-text teal">Expériences Professionnelles</h3>
+      <h3 class="page-title white-text teal">Expérience</h3>
       <div class="container">
-        <!-- Experience 1 -->
         <div class="card">
           <div class="card-content">
-            <div class="row">
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title"><a href="#experience" class="teal-text hoverline">Ministère de l'Économie et des Finances - Maroc</a></span>
-                </p>
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">Conception et réalisation d'un site web événementiel</div>
-            <p>Juillet 2024 - Août 2024 | Rabat, Maroc</p>
-            <ul>
-              <li>Conception et développement d'un site web événementiel pour le Ministère</li>
-              <li>Technologies utilisées: HTML, CSS, JavaScript, Bootstrap</li>
-              <li>Interface responsive et adaptée à tous les appareils</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Experience 2 -->
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title"><a href="#experience" class="teal-text hoverline">École Marocaine des Sciences de l'ingénieur (EMSI)</a></span>
-                </p>
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">Application Web pour la Gestion d'un Cabinet Médical</div>
-            <p>2024 | Rabat, Maroc</p>
-            <ul>
-              <li>Développement d'une application web complète pour la gestion des cabinets médicaux</li>
-              <li>Backend: Python (Django)</li>
-              <li>Frontend: HTML, CSS, JavaScript, Bootstrap</li>
-              <li>Base de données: PostgreSQL/MySQL</li>
-            </ul>
+            <span class="card-title teal-text">Ministère de l'Économie et des Finances</span>
+            <p class="brown-text">Stage - Développement d’un site web événementiel</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Fourth Section: Projects -->
+    <!-- Projects -->
     <section id="projects" class="section scrollspy">
       <h3 class="page-title white-text teal">Projets</h3>
       <div class="container">
-        <div class="row">
-          <!-- Project 1 -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Application gestion médicale" src="https://via.placeholder.com/300x200?text=Gestion+Cabinet+Médical" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Application Web Gestion Cabinet Médical<i class="fa fa-ellipsis-v right"></i></span>
-                <p>Application web complète pour la gestion des patients, rendez-vous et dossiers médicaux.</p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title teal-text">Détails du projet<i class="fa fa-times right"></i></span>
-                <p>Développement full-stack d'une application de gestion médicale avec Django en backend et HTML/CSS/JS/Bootstrap en frontend.</p>
-                <p><strong>Technologies:</strong> Python, Django, HTML, CSS, JavaScript, Bootstrap, PostgreSQL</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Portail d'emploi" src="https://via.placeholder.com/300x200?text=Portail+Emploi" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Application Web Portail d'Emploi<i class="fa fa-ellipsis-v right"></i></span>
-                <p>Plateforme de mise en relation entre recruteurs et chercheurs d'emploi.</p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title teal-text">Détails du projet<i class="fa fa-times right"></i></span>
-                <p>Projet académique de 4ème année - Développement d'une plateforme complète de recrutement en ligne.</p>
-                <p><strong>Technologies:</strong> Java EE, HTML, CSS, JavaScript, MySQL</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Site web événementiel" src="https://via.placeholder.com/300x200?text=Site+Événementiel" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Site Web Événementiel<i class="fa fa-ellipsis-v right"></i></span>
-                <p>Site web responsive pour la promotion d'événements gouvernementaux.</p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title teal-text">Détails du projet<i class="fa fa-times right"></i></span>
-                <p>Conception et réalisation d'un site web événementiel pour le Ministère de l'Économie et des Finances.</p>
-                <p><strong>Technologies:</strong> HTML, CSS, JavaScript, Bootstrap</p>
-              </div>
-            </div>
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title teal-text">Application Gestion Cabinet Médical</span>
+            <p>Application web complète avec Django + PostgreSQL.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Fifth Section: Skills -->
+    <!-- Skills -->
     <section id="skills" class="section scrollspy">
       <h3 class="page-title white-text teal">Compétences</h3>
       <div class="container">
-        <!-- Languages -->
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Langages de Programmation</h4>
-            <div class="row">
-              <div class="col s12 m6">
-                <p>Java / Java EE</p>
-                <div class="progress">
-                  <div class="determinate teal" style="width: 85%"></div>
-                </div>
-                
-                <p>PHP</p>
-                <div class="progress">
-                  <div class="determinate teal" style="width: 80%"></div>
-                </div>
-                
-                <p>Python</p>
-                <div class="progress">
-                  <div class="determinate teal" style="width: 75%"></div>
-                </div>
-              </div>
-              
-              <div class="col s12 m6">
-                <p>JavaScript</p>
-                <div class="progress">
-                  <div class="determinate teal" style="width: 70%"></div>
-                </div>
-                
-                <p>HTML/CSS</p>
-                <div class="progress">
-                  <div class="determinate teal" style="width: 90%"></div>
-                </div>
-                
-                <p>C++</p>
-                <div class="progress">
-                  <div class="determinate teal" style="width: 65%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Databases -->
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Bases de Données</h4>
-            <div class="row">
-              <div class="col s12 m6">
-                <p>MySQL</p>
-                <div class="progress">
-                  <div class="determinate teal" style="width: 85%"></div>
-                </div>
-                
-                <p>PostgreSQL</p>
-                <div class="progress">
-                  <div class="determinate teal" style="width: 75%"></div>
-                </div>
-              </div>
-              
-              <div class="col s12 m6">
-                <p>PL/SQL</p>
-                <div class="progress">
-                  <div class="determinate teal" style="width: 70%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Frameworks -->
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Frameworks & Technologies</h4>
-            <div class="row text-center">
-              <div class="col s4 m2">
-                <img alt="Django" src="https://via.placeholder.com/80x80?text=Django" class="responsive-img" />
-                <p>Django</p>
-              </div>
-              <div class="col s4 m2">
-                <img alt="Bootstrap" src="https://via.placeholder.com/80x80?text=Bootstrap" class="responsive-img" />
-                <p>Bootstrap</p>
-              </div>
-              <div class="col s4 m2">
-                <img alt="Git" src="https://via.placeholder.com/80x80?text=Git" class="responsive-img" />
-                <p>Git</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Languages -->
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Langues</h4>
-            <div class="row">
-              <div class="col s12 m4">
-                <p>Arabe</p>
-                <div class="progress">
-                  <div class="determinate teal" style="width: 100%"></div>
-                </div>
-              </div>
-              <div class="col s12 m4">
-                <p>Français</p>
-                <div class="progress">
-                  <div class="determinate teal" style="width: 90%"></div>
-                </div>
-              </div>
-              <div class="col s12 m4">
-                <p>Anglais</p>
-                <div class="progress">
-                  <div class="determinate teal" style="width: 70%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <p>Java, PHP, Python, JavaScript, HTML/CSS</p>
+        <div class="progress"><div class="determinate" style="width:85%"></div></div>
       </div>
     </section>
 
-    <!-- Sixth Section: Education -->
+    <!-- Education -->
     <section id="education" class="section scrollspy">
       <h3 class="page-title white-text teal">Formation</h3>
       <div class="container">
-        <div class="row">
-          <div class="col s12 m6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a href="#education" class="teal-text hoverline">École Marocaine des Sciences de l'ingénieur (EMSI)</a></span>
-                </p>
-                <p class="brown-text">Rabat, Maroc</p>
-                <p>2021 - 2026</p>
-                <ul>
-                  <li>Ingénieure en Informatique et Réseaux</li>
-                  <li>Spécialisation en développement web et mobile</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a href="#education" class="teal-text hoverline">Lycée AL INBOUDARRI</a></span>
-                </p>
-                <p class="brown-text">Taza, Maroc</p>
-                <p>2021</p>
-                <ul>
-                  <li>Baccalauréat option: Sciences Physiques et Chimie</li>
-                  <li>Mention Bien</li>
-                </ul>
-              </div>
-            </div>
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title teal-text">EMSI - Rabat</span>
+            <p>Ingénierie Informatique (2021 - 2026)</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Seventh Section: Contact -->
+    <!-- Contact -->
     <section id="contact" class="section scrollspy full-height">
       <h3 class="page-title white-text teal">Contact</h3>
       <div class="container">
         <p>
-          <a aria-label="Email Douae" href="mailto:douselamrani3@gmail.com" target="_blank" data-position="top"
-            data-tooltip="Email Douae" class="btn-floating btn-large waves-effect waves-light blue-grey">
+          <a href="mailto:douselamrani3@gmail.com" target="_blank"
+            class="btn-floating btn-large waves-effect waves-light blue-grey">
             <i class="fa fa-envelope"></i>
           </a>
-          <a aria-label="Email Douae" href="mailto:douselamrani3@gmail.com" class="hoverline">douselamrani3@gmail.com</a>
-        </p>
-        <p>
-          <a aria-label="Call Douae" data-position="top" data-tooltip="Call Douae"
-            class="btn-floating btn-large waves-effect waves-light blue-grey">
-            <i class="fa fa-phone"></i>
-          </a>
-          <a aria-label="Call Douae">(+212) 06 37 49 04 12</a>
-        </p>
-        <p>
-          <a aria-label="View Douae on LinkedIn" href="https://linkedin.com" target="_blank"
-            data-position="top" data-tooltip="View Douae on LinkedIn"
-            class="btn-floating btn-large waves-effect waves-light blue-grey">
-            <i class="fa fa-linkedin"></i>
-          </a>
-          <a aria-label="Douae on LinkedIn" href="https://linkedin.com" class="hoverline" target="_blank">LinkedIn</a>
-        </p>
-        <p>
-          <a aria-label="View Douae on GitHub" href="https://github.com" target="_blank"
-            data-position="top" data-tooltip="View Douae on GitHub"
-            class="btn-floating btn-large waves-effect waves-light blue-grey">
-            <i class="fa fa-github"></i>
-          </a>
-          <a aria-label="Douae on GitHub" href="https://github.com" class="hoverline" target="_blank">GitHub</a>
+          douselamrani3@gmail.com
         </p>
       </div>
     </section>
   </main>
 
-  <!-- jQuery-->
+  <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-  <!-- Materialize - Compiled and minified JavaScript-->
+  <!-- Materialize JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
   <script>
-    // Materialize - Initializers
     $(document).ready(function () {
       $(".scrollspy").scrollSpy();
-      // Initialize collapse button
       $(".button-collapse").sideNav({
-        menuWidth: 190, // Default is 240
-        edge: "left", // Choose the horizontal origin
-        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        menuWidth: 200,
+        edge: "left",
+        closeOnClick: true
       });
     });
   </script>
